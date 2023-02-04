@@ -23,7 +23,7 @@
             <Setter Property="FontFamily" Value="/Assets/PerfectDOS.ttf#Perfect DOS VGA 437"/>
         </Style>
         <Style Selector="Button.h4">
-            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="FontSize" Value="18"/>
             <Setter Property="FontFamily" Value="/Assets/PerfectDOS.ttf#Perfect DOS VGA 437"/>
         </Style>
     </Window.Styles>
