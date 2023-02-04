@@ -39,7 +39,7 @@
             <TextBlock Text="{Binding Greeting}" Classes="h1" HorizontalAlignment="Center"/>
         </Grid>
         <Grid Grid.Row="1" Margin="150,5,150,5">
-            <TextBox Text="{Binding Username}" TextAlignment="Center" Watermark="Username"/>
+            <TextBox Text="{Binding Username, Mode=TwoWay}" TextAlignment="Center" Watermark="Username"/>
         </Grid>
         <Grid Grid.Row="2" Margin="150,5,150,5">
             <TextBox Text="{Binding Userpass}" TextAlignment="Center" PasswordChar="*" Watermark="Password"/>
