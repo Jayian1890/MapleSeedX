@@ -8,7 +8,7 @@ public class MainWindowViewModel : ViewModelBase
         Userpass = string.Empty;
     }
 
-    public string Greeting => "Welcome to MapleSeed X!";
+    public string Greeting => "Welcome to MapleSeed X";
     
     public string Username { get; set; }
     

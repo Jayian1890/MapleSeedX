@@ -18,9 +18,14 @@
         <Style Selector="CheckBox.content">
             <Setter Property="FontFamily" Value="/Assets/PerfectDOS.ttf#Perfect DOS VGA 437"/>
         </Style>
+        <Style Selector="TextBlock.copyright">
+            <Setter Property="FontSize" Value="8"/>
+            <Setter Property="Foreground" Value="Gray"/>
+            <Setter Property="FontFamily" Value="Verdana"/>
+        </Style>
         <Style Selector="TextBlock.h1">
             <Setter Property="FontSize" Value="24"/>
-            <Setter Property="Foreground" Value="DarkBlue"/>
+            <Setter Property="Foreground" Value="DodgerBlue"/>
             <Setter Property="FontFamily" Value="/Assets/PerfectDOS.ttf#Perfect DOS VGA 437"/>
         </Style>
         <Style Selector="Button.h4">
@@ -29,7 +34,7 @@
         </Style>
     </Window.Styles>
 
-    <Grid RowDefinitions="Auto,Auto,Auto,Auto">
+    <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto">
         <Grid Grid.Row="0" Margin="50,25,50,75">
             <TextBlock Classes="h1" Text="{Binding Greeting}" HorizontalAlignment="Center"/>
         </Grid>
@@ -39,9 +44,12 @@
         <Grid Grid.Row="2" Margin="50,5">
             <TextBox Text="{Binding Userpass}" TextAlignment="Center" PasswordChar="*" Watermark="Password"/>
         </Grid>
-        <Grid Grid.Row="3" Margin="50,75, 50, 5">
+        <Grid Grid.Row="3" Margin="50,75,50,5">
             <CheckBox Classes="content" Content="Autologin" IsChecked="{Binding Autologin}"></CheckBox>
-            <Button Classes="h4" Content="Login" HorizontalAlignment="Right"></Button>
+            <Button Classes="h4" Content="Login" HorizontalAlignment="Right" Background="LightskyBlue"></Button>
+        </Grid>
+        <Grid Grid.Row="4" Margin="5,65,5,5" VerticalAlignment="Bottom" HorizontalAlignment="Right">
+            <TextBlock Classes="copyright" Text="© 2023 - Interlaced Pixel"/>
         </Grid>
     </Grid>
 </Window>
