@@ -11,6 +11,8 @@
         <Folder Include="Models\" />
         <AvaloniaResource Include="Assets\**" />
         <None Remove=".gitignore" />
+        <None Remove="Avalonia.Xaml.Behaviors" />
+        <None Remove="Avalonia.Markup.Xaml.Loader" />
     </ItemGroup>
 
     <ItemGroup>

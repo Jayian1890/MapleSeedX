@@ -15,4 +15,9 @@ public class MainWindowViewModel : ViewModelBase
     public string Userpass { get; set; }
     
     public bool Autologin { get; set; }
+
+    public void OnLoginClick()
+    {
+        Username = "Jayian";
+    }
 }

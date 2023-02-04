@@ -1,13 +1,13 @@
-﻿<Properties StartupConfiguration="{B7DBB14C-811A-45A9-9C71-9A2A275BE8D7}|Default" GitUserInfo="UsingMD">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+﻿<Properties GitUserInfo="UsingMD" StartupConfiguration="{B7DBB14C-811A-45A9-9C71-9A2A275BE8D7}|Default">
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints />
   <MonoDevelop.Ide.ItemProperties.MapleSeedX PreferredExecutionTarget="MonoDevelop.Default" />
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Views/MainWindow.axaml">
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="ViewModels/LoginWindowViewModel.cs">
     <Files>
-      <File FileName="Views/MainWindow.axaml" Line="55" Column="10" />
-      <File FileName="ViewModels/MainWindowViewModel.cs" />
+      <File FileName="ViewModels/LoginWindowViewModel.cs" Line="4" Column="2" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -15,11 +15,16 @@
           <Node name="MapleSeedX" expanded="True">
             <Node name="MapleSeedX" expanded="True">
               <Node name="ViewModels" expanded="True" />
-              <Node name="Views" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="MainWindow.axaml" expanded="True" selected="True" />
+              </Node>
+              <Node name="App.axaml" expanded="True" />
             </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <Xamarin.Addins.Core.Project ActiveDebugTarget="MyAppleMacCatalystID" />
+  <MultiItemStartupConfigurations />
 </Properties>
