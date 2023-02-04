@@ -1,0 +1,46 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:MapleSeedX.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="500" d:DesignHeight="400" 
+        MinWidth="500" MinHeight="400" MaxWidth="500" MaxHeight="400"
+        x:Class="MapleSeedX.Views.MainWindow"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="MapleSeed X" Background="Pink">
+
+    <Design.DataContext>
+        <!-- This only sets the DataContext for the previewer in an IDE,
+             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+    <Window.Styles>
+        <Style Selector="CheckBox.content">
+            <Setter Property="FontFamily" Value="/Assets/PerfectDOS.ttf#Perfect DOS VGA 437"/>
+        </Style>
+        <Style Selector="TextBlock.h1">
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="FontFamily" Value="/Assets/PerfectDOS.ttf#Perfect DOS VGA 437"/>
+        </Style>
+        <Style Selector="Button.h4">
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="FontFamily" Value="/Assets/PerfectDOS.ttf#Perfect DOS VGA 437"/>
+        </Style>
+    </Window.Styles>
+
+    <Grid RowDefinitions="Auto,Auto,Auto,Auto">
+        <Grid Grid.Row="0" Margin="50,25,50,75">
+            <TextBlock Classes="h1" Text="{Binding Greeting}" HorizontalAlignment="Center"/>
+        </Grid>
+        <Grid Grid.Row="1" Margin="50, 5">
+            <TextBox Text="{Binding Username}" TextAlignment="Center" Watermark="Username"/>
+        </Grid>
+        <Grid Grid.Row="2" Margin="50,5">
+            <TextBox Text="{Binding Userpass}" TextAlignment="Center" PasswordChar="*" Watermark="Password"/>
+        </Grid>
+        <Grid Grid.Row="3" Margin="50,75, 50, 5">
+            <CheckBox Classes="content" Content="Autologin" IsChecked="{Binding Autologin}"></CheckBox>
+            <Button Classes="h4" Content="Login" HorizontalAlignment="Right"></Button>
+        </Grid>
+    </Grid>
+</Window>
