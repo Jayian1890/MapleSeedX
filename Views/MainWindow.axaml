@@ -48,7 +48,7 @@
             <CheckBox Classes="content" Content="Autologin" IsChecked="{Binding Autologin}"></CheckBox>
             <Button Classes="h4" Content="Login" HorizontalAlignment="Right" Background="LightskyBlue"></Button>
         </Grid>
-        <Grid Grid.Row="4" Margin="5,65,5,5" VerticalAlignment="Bottom" HorizontalAlignment="Right">
+        <Grid Grid.Row="4" Margin="0,65,10,10" VerticalAlignment="Bottom" HorizontalAlignment="Right">
             <TextBlock Classes="copyright" Text="© 2023 - Interlaced Pixel"/>
         </Grid>
     </Grid>
