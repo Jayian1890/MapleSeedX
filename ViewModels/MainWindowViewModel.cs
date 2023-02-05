@@ -1,23 +1,28 @@
-﻿namespace MapleSeedX.ViewModels;
+﻿using System.Windows.Input;
+using ReactiveUI;
+
+namespace MapleSeedX.ViewModels;
 
 public class MainWindowViewModel : ViewModelBase
 {
     public MainWindowViewModel()
     {
-        Username = string.Empty;
-        Userpass = string.Empty;
+        EncryptedFilePath = string.Empty;
+        IsProgressBusy = true;
+        
+        OnDecryptCommand = ReactiveCommand.Create(() => OnDecryptClick());
     }
 
     public string Greeting => "Welcome to MapleSeed X";
     
-    public string Username { get; set; }
+    public string EncryptedFilePath { get; set; }
     
-    public string Userpass { get; set; }
-    
-    public bool Autologin { get; set; }
+    public bool IsProgressBusy { get; set; }
 
-    public void OnLoginClick()
+    public ICommand OnDecryptCommand { get; }
+    
+    public void OnDecryptClick()
     {
-        Username = "Jayian";
+        EncryptedFilePath = "Jayian";
     }
 }

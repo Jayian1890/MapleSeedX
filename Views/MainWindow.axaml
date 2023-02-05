@@ -1,18 +1,14 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<Window xmlns="https://github.com/avaloniaui"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:vm="using:MapleSeedX.ViewModels"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="720" d:DesignHeight="420" 
-        MinWidth="720" MinHeight="420" Width="720" Height="420"
-        x:Class="MapleSeedX.Views.MainWindow"
-        Icon="/Assets/avalonia-logo.ico" Title="MapleSeed X"
-        TransparencyLevelHint="AcrylicBlur" Background="Transparent" ExtendClientAreaToDecorationsHint="True">
-
+<?xml version="1.0" encoding="utf-8"?>
+<Window xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+xmlns:vm="using:MapleSeedX.ViewModels" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
+x:Class="MapleSeedX.Views.MainWindow" Icon="/Assets/avalonia-logo.ico"
+MinWidth="500" MinHeight="250" Width="500" Height="250"
+Title="MapleSeed X" TransparencyLevelHint="AcrylicBlur" Background="Transparent"
+ ExtendClientAreaToDecorationsHint="True" WindowStartupLocation="CenterOwner">
     <Design.DataContext>
-        <!-- This only sets the DataContext for the previewer in an IDE,
-             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+    <!-- This only sets the DataContext for the previewer in an IDE, 
+    to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
         <vm:MainWindowViewModel/>
     </Design.DataContext>
     <Window.Styles>
@@ -21,7 +17,6 @@
         </Style>
         <Style Selector="TextBlock.copyright">
             <Setter Property="FontSize" Value="8"/>
-            <Setter Property="Foreground" Value="Black"/>
             <Setter Property="FontFamily" Value="Verdana"/>
         </Style>
         <Style Selector="TextBlock.h1">
@@ -33,23 +28,24 @@
             <Setter Property="FontFamily" Value="/Assets/PerfectDOS.ttf#Perfect DOS VGA 437"/>
         </Style>
     </Window.Styles>
+    <Panel>
+        <ExperimentalAcrylicBorder IsHitTestVisible="False">
+            <ExperimentalAcrylicBorder.Material>
+                <ExperimentalAcrylicMaterial BackgroundSource="Digger" TintColor="HotPink" TintOpacity="1.25" MaterialOpacity="0"/>
+            </ExperimentalAcrylicBorder.Material>
+        </ExperimentalAcrylicBorder>
 
-    <Grid RowDefinitions="*,Auto,Auto,Auto,*">
-        <Grid Grid.Row="0" Margin="50">
-            <TextBlock Text="{Binding Greeting}" Classes="h1" HorizontalAlignment="Center"/>
-        </Grid>
-        <Grid Grid.Row="1" Margin="150,5,150,5">
-            <TextBox Text="{Binding Username, Mode=TwoWay}" TextAlignment="Center" Watermark="Username"/>
-        </Grid>
-        <Grid Grid.Row="2" Margin="150,5,150,5">
-            <TextBox Text="{Binding Userpass}" TextAlignment="Center" PasswordChar="*" Watermark="Password"/>
-        </Grid>
-        <Grid Grid.Row="3" Margin="150,5,150,0">
-            <CheckBox Classes="content" Content="Autologin" IsChecked="{Binding Autologin}"></CheckBox>
-            <Button Command="{Binding OnLoginClick}" Classes="h4" Content="Login" HorizontalAlignment="Right"></Button>
-        </Grid>
-        <Grid Grid.Row="4" Margin="0,0,10,10">
-            <TextBlock Classes="copyright" Text="© 2023 - Interlaced Pixel" VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
-        </Grid>
-    </Grid>
+        <DockPanel>
+            <StackPanel DockPanel.Dock="Top" Margin="25,50,25,25">
+                <TextBox Text="{Binding EncryptedFilePath}" Watermark="Encrypted file path...."/>
+                <Button Content="Decrypt" Command="{Binding OnDecryptClick}" HorizontalAlignment="Center" Margin="0,5"/>
+            </StackPanel>
+            <StackPanel DockPanel.Dock="Bottom" Margin="25,0,25,25" VerticalAlignment="Bottom">
+                <ProgressBar Foreground="Purple" IsIndeterminate="True" IsVisible="{Binding IsProgressBusy}"/>
+                <StackPanel Margin="0,10,0,0" HorizontalAlignment="Right">
+                    <TextBlock Classes="copyright" Text="© 2023 - Interlaced Pixel"/>
+                </StackPanel>
+            </StackPanel>
+        </DockPanel>
+    </Panel>
 </Window>
