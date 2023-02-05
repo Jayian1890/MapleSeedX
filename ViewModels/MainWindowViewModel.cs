@@ -7,22 +7,38 @@ public class MainWindowViewModel : ViewModelBase
 {
     public MainWindowViewModel()
     {
-        EncryptedFilePath = string.Empty;
-        IsProgressBusy = true;
-        
         OnDecryptCommand = ReactiveCommand.Create(() => OnDecryptClick());
     }
 
-    public string Greeting => "Welcome to MapleSeed X";
-    
-    public string EncryptedFilePath { get; set; }
-    
-    public bool IsProgressBusy { get; set; }
-
     public ICommand OnDecryptCommand { get; }
-    
+
+    private string _encryptedFilePath = string.Empty;
+
+    public string EncryptedFilePath 
+    {
+        get => _encryptedFilePath;
+        set => this.RaiseAndSetIfChanged(ref _encryptedFilePath, value);
+    } 
+
+    private bool _isProgressBusy = false;
+
+    public bool IsProgressBusy 
+    {
+        get => _isProgressBusy;
+        set => this.RaiseAndSetIfChanged(ref _isProgressBusy, value);
+    }
+
     public void OnDecryptClick()
     {
-        EncryptedFilePath = "Jayian";
+        ProgressText = "Starting decryption...";
+        IsProgressBusy = true;
+    }
+
+    private string _progressText = string.Empty;
+
+    public string ProgressText
+    {
+        get => _progressText;
+        set => this.RaiseAndSetIfChanged(ref _progressText, value);
     }
 }
