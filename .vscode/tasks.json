@@ -15,15 +15,16 @@
         },
         {
             "label": "publish",
-            "command": "dotnet",
-            "type": "process",
+            "command": "bash",
+            "type": "shell",
             "args": [
-                "publish",
-                "${workspaceFolder}/MapleSeedX.csproj",
-                "/property:GenerateFullPaths=true",
-                "/consoleloggerparameters:NoSummary"
+                "${workspaceFolder}/publish-vs.sh"
             ],
-            "problemMatcher": "$msCompile"
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
         },
         {
             "label": "watch",

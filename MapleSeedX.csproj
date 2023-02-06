@@ -5,14 +5,42 @@
         <Nullable>enable</Nullable>
         <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
         <ApplicationManifest>app.manifest</ApplicationManifest>
+        <Configurations>Release;Publish;Debug</Configurations>
+        <ApplicationIcon>Assets\MapleSeed.ico</ApplicationIcon>
     </PropertyGroup>
 
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+      <DebugSymbols>true</DebugSymbols>
+      <WarningLevel>4</WarningLevel>
+      <UseAppHost>true</UseAppHost>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Publish|AnyCPU' ">
+      <IntermediateOutputPath>obj\Publish</IntermediateOutputPath>
+      <DebugSymbols>true</DebugSymbols>
+      <DebugType>portable</DebugType>
+      <Optimize>true</Optimize>
+      <OutputPath>bin\Publish</OutputPath>
+      <DefineConstants>TRACE;RELEASE;NET;NET7_0;NETCOREAPP</DefineConstants>
+      <WarningLevel>4</WarningLevel>
+      <CustomCommands>
+        <CustomCommands>
+          <Command>
+            <type>Custom</type>
+            <command>bash publish-vs.sh</command>
+            <workingdir></workingdir>
+          </Command>
+        </CustomCommands>
+      </CustomCommands>
+      <NoWarn>1701;1702;IL2121</NoWarn>
+      <Nullable></Nullable>
+    </PropertyGroup>
     <ItemGroup>
         <Folder Include="Models\" />
         <AvaloniaResource Include="Assets\**" />
         <None Remove=".gitignore" />
         <None Remove="Avalonia.Xaml.Behaviors" />
         <None Remove="Avalonia.Markup.Xaml.Loader" />
+        <None Remove="Dotnet.Bundle" />
     </ItemGroup>
 
     <ItemGroup>
@@ -26,6 +54,7 @@
         <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="0.10.18" />
         <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.18" />
         <PackageReference Include="XamlNameReferenceGenerator" Version="1.5.1" />
+        <PackageReference Include="Dotnet.Bundle" Version="0.9.13" />
     </ItemGroup>
     <ItemGroup>
       <None Update="Views\MainWindow.xaml">
