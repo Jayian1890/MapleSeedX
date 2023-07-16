@@ -1,4 +1,4 @@
-# MapleSeed X (In development)
+# MapleSeed X (Archived)
 A version of MapleSeed rewritten for macOS
 
 
